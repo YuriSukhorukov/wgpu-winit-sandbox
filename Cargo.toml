@@ -1,0 +1,20 @@
+[package]
+name = "wgpu-winit-sandbox"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+async-std = "1.13.0"
+bytemuck = "1.22.0"
+wgpu = "24.0.1"
+winit = "0.30.9"
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3     # Max optimization level
+lto = "fat"       # Link Time Optimization
+codegen-units = 1 # Better performance
+panic = "abort"   # Small binary size
+strip = true      # Remove debug information (made binary smaller)
