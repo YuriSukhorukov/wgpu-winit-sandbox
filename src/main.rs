@@ -1,5 +1,6 @@
 mod examples;
 
 fn main() {
-    examples::base::run();
+    // examples::triangle::run();
+    examples::buffers_and_indexes::run();
 }
